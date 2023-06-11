@@ -55,7 +55,7 @@ class App:
     def setMarks(self,m):
         self.marks[m] = 1
         #print(len(self.marks))
-        if len(self.marks) == 68:
+        if len(self.marks) == 69:
             self.stage = 2
             self.tipMsg("现在请按下 Fn + F1 完成本次测试")
 
@@ -997,6 +997,18 @@ class App:
         GButton_822["command"] = self.GButton_822_command
 
         self.assignKey(GButton_822)
+
+        GButton_415=tk.Button(root)
+        GButton_415["bg"] = "#efefef"
+        ft = tkFont.Font(family='Times',size=10)
+        GButton_415["font"] = ft 
+        GButton_415["fg"] = "#000000"
+        GButton_415["justify"] = "center"
+        GButton_415["text"] = "中键"
+        GButton_415.place(x=280,y=370,width=60,height=30)
+        GButton_415["command"] = self.GButton_415_command
+
+        self.mouse["middle"] = GButton_415
 
     def GButton_550_command(self):
         self.clearAll()
